@@ -699,6 +699,14 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
+"@types/amqplib@^0.5.17":
+  version "0.5.17"
+  resolved "https://registry.yarnpkg.com/@types/amqplib/-/amqplib-0.5.17.tgz#1211f5e01b62006e8a380af258d147de0b3b22e0"
+  integrity sha512-RImqiLP1swDqWBW8UX9iBXVEOw6MYzNmxdXqfemDfdwtUvdTM/W0s2RlSuMVIGkRhaWvpkC9O/N81VzzQwfAbw==
+  dependencies:
+    "@types/bluebird" "*"
+    "@types/node" "*"
+
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.14"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.14.tgz#faaeefc4185ec71c389f4501ee5ec84b170cc402"
@@ -731,6 +739,11 @@
   integrity sha512-Vs0hm0vPahPMYi9tDjtP66llufgO3ST16WXaSTtDGEl9cewAl3AibmxWw6TINOqHPT9z0uABKAYjT9jNSg4npw==
   dependencies:
     "@babel/types" "^7.3.0"
+
+"@types/bluebird@*":
+  version "3.5.35"
+  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.35.tgz#3964c48372bf62d60616d8673dd77a9719ebac9b"
+  integrity sha512-2WeeXK7BuQo7yPI4WGOBum90SzF/f8rqlvpaXx4rjeTmNssGRDHWf7fgDUH90xMB3sUOu716fUK5d+OVx0+ncQ==
 
 "@types/body-parser@*":
   version "1.19.0"
@@ -2614,10 +2627,10 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
 
-fluentsearch-types@^0.9.6:
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/fluentsearch-types/-/fluentsearch-types-0.9.6.tgz#ad6520f74e6c8b0d80153e07cf498a53f11f5f84"
-  integrity sha512-MZWMuj8NQSR6SB3qND/2Rkl3dUViDSwIWx1mMlC6vf6rfQZ8kfsmjQdiXjKlbk+h7AD5fC71gZRwjBwX2G6U2A==
+fluentsearch-types@^0.9.7:
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/fluentsearch-types/-/fluentsearch-types-0.9.7.tgz#8d5ab91b26db6fa5592a7f3aca26cb306ed6d63d"
+  integrity sha512-/qyzUX47DU+fNIr+GRqpuKo/kMQUf18uhZZxDWjOYSO3kRA5ma3Qp2QYIGMBlBw48m13ngCbmzFeV0v06R4+GA==
   dependencies:
     mongoose "^5.12.10"
 

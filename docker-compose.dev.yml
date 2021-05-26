@@ -19,6 +19,7 @@ services:
       RABBITMQ_ENDPOINT: 'rabbitmq'
       RABBITMQ_USERNAME: 'root'
       RABBITMQ_PASSWORD: 'FluentSearchRabbitMQ'
+      ML_ENDPOINT: http://insight:8080
     build:
       context: ./
       dockerfile: Dockerfile

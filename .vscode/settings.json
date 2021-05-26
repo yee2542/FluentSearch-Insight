@@ -3,5 +3,8 @@
         "dist": true,
         "node_modules": true
     },
-    "typescript.preferences.importModuleSpecifier": "relative"
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "files.watcherExclude": {
+        "db": true
+    }
 }

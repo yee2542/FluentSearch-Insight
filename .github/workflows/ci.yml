@@ -1,0 +1,23 @@
+name: Automated Tests and Linting
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install packages
+        run: yarn install
+      - name: Run Typescript Checks
+        run: yarn lint
+      - name: Build
+        run: yarn build
+      - name: E2E
+        run: yarn test:e2e

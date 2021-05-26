@@ -69,7 +69,3 @@ services:
       TZ: Asia/Bangkok
     volumes:
       - './db/cfg:/bitnami'
-  elasticsearch:
-    image: 'bitnami/elasticsearch:latest'
-    ports:
-      - '9200:9200'

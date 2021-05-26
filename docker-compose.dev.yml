@@ -15,7 +15,10 @@ services:
       DATABASE_AUTH_SOURCE: admin
       JWT_SECRET_KEY: jwt1secret
       JWT_EXPIRES: 300000
-      PORT: 5000
+      PORT: 3000
+      RABBITMQ_ENDPOINT: 'rabbitmq'
+      RABBITMQ_USERNAME: 'root'
+      RABBITMQ_PASSWORD: 'FluentSearchRabbitMQ'
     build:
       context: ./
       dockerfile: Dockerfile
@@ -69,3 +72,13 @@ services:
       TZ: Asia/Bangkok
     volumes:
       - './db/cfg:/bitnami'
+  rabbitmq:
+    image: bitnami/rabbitmq:3.8
+    volumes:
+      - ./mq/:/bitnami
+    ports:
+      - '15672:15672'
+    environment:
+      TZ: Asia/Bangkok
+      RABBITMQ_USERNAME: root
+      RABBITMQ_PASSWORD: FluentSearchRabbitMQ

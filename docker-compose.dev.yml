@@ -24,7 +24,7 @@ services:
       dockerfile: Dockerfile
       target: dev
     ports:
-      - '5000:5000'
+      - '3000:3000'
       - '9229:9229'
     volumes:
       - './src:/src'
@@ -82,3 +82,11 @@ services:
       TZ: Asia/Bangkok
       RABBITMQ_USERNAME: root
       RABBITMQ_PASSWORD: FluentSearchRabbitMQ
+  insight:
+    container_name: insight
+    restart: on-failure
+    image: jolibrain/deepdetect_cpu
+    ports:
+      - '8080:8080'
+    volumes:
+      - './models:/opt/models/'

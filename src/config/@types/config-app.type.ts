@@ -18,4 +18,5 @@ export type ConfigAppProviderType = {
     username: string;
     password: string;
   };
+  ml_endpoint: string;
 };

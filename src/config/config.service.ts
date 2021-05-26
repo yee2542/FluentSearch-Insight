@@ -18,6 +18,7 @@ export class ConfigService {
       RABBITMQ_ENDPOINT,
       RABBITMQ_USERNAME,
       RABBITMQ_PASSWORD,
+      ML_ENDPOINT,
     } = process.env as ConfigEnvType;
     return {
       database: {
@@ -41,6 +42,7 @@ export class ConfigService {
         username: RABBITMQ_USERNAME,
         password: RABBITMQ_PASSWORD,
       },
+      ml_endpoint: ML_ENDPOINT,
     };
   }
 }

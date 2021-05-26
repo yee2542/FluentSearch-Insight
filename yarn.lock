@@ -607,6 +607,11 @@
     tslib "2.2.0"
     uuid "8.3.2"
 
+"@nestjs/mongoose@^7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/mongoose/-/mongoose-7.2.4.tgz#60a50532a244279703344368d74ecd802aeda4a4"
+  integrity sha512-NTE/IwijFUEJytPHLoHRYe0X5p16W1Awf8tm6I3mWsIUuBnSDfMyN0fy30uVaM/exYvCkMwEsAVpeSeKVPMHxg==
+
 "@nestjs/platform-express@^7.5.1":
   version "7.6.17"
   resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.6.17.tgz#80b6dc2ac3636af19b5d70573926b5b09da35810"
@@ -4067,7 +4072,7 @@ mongoose-legacy-pluralize@1.0.2:
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
 
-mongoose@^5.12.10:
+mongoose@^5.12.10, mongoose@^5.12.11:
   version "5.12.11"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.12.11.tgz#e4531e4075aeed86db6482b2f1b5564570934d4c"
   integrity sha512-16TVqYhHQdZNR8RTis/8iiTPy+nJPq0UhKyBFTucLLU3PWcDLY2gAGv6aOk0LygTNhEfgNnENgUUHhjVqTuh8w==

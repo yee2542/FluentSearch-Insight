@@ -5,6 +5,7 @@
     },
     "typescript.preferences.importModuleSpecifier": "relative",
     "files.watcherExclude": {
+        "**/.archive/**": true,
         "db": true
     }
 }

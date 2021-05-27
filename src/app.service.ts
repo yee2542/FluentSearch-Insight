@@ -7,6 +7,7 @@ import {
   WORKER_INSIGHT_QUEUE,
 } from 'fluentsearch-types';
 import { InsightService } from './insight/insight.service';
+import { join } from 'path';
 @Injectable()
 export class AppService implements OnModuleInit {
   constructor(
@@ -27,11 +28,18 @@ export class AppService implements OnModuleInit {
           const payload = JSON.parse(msg?.content.toString() || '') as TaskDTO;
           if (!payload) throw Error('Bad queue parsing');
           Logger.verbose(payload, 'WORKER_INSIGHT_QUEUE');
+
+          // hotfix
+          const internalUri = new URL(
+            join(payload.owner, payload.fileId as string),
+            this.configService.get().storage_hostname,
+          ).href;
+
           payload.uri &&
             payload.fileId &&
             (await this.insightService.predAllModel(
               payload.fileId,
-              payload.uri,
+              internalUri,
             ));
           msg && channel.ack(msg);
           // send to ack queue

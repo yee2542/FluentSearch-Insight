@@ -24,7 +24,7 @@ export class InsightService {
     return this.insightModel.create(data);
   }
 
-  async predAllModel(fileId: string, uri: string) {
+  async predAllModel(fileId: string, owner: string, uri: string) {
     const allModel: ModelEnum[] = [
       ModelEnum.classification_21k,
       ModelEnum.detection_600,
@@ -32,11 +32,16 @@ export class InsightService {
       ModelEnum.ilsvrc_googlenet,
     ];
     for (const m of allModel) {
-      await this.predict(fileId, uri, m);
+      await this.predict(fileId, owner, uri, m);
     }
   }
 
-  private async predict(fileId: string, uri: string, model: ModelEnum) {
+  private async predict(
+    fileId: string,
+    uri: string,
+    owner: string,
+    model: ModelEnum,
+  ) {
     const MODEL_ENDPOINT = model;
 
     const payload: DeepDetectRequestAPI = {
@@ -69,6 +74,7 @@ export class InsightService {
         for (const classPred of pred.classes) {
           await this.createInsightDoc({
             fileId,
+            owner,
             keyword: classPred.cat,
             result: classPred.cat.toLocaleLowerCase(),
             model: MODEL_ENDPOINT,

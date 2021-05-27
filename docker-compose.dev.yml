@@ -15,13 +15,17 @@ services:
       DATABASE_AUTH_SOURCE: admin
       JWT_SECRET_KEY: jwt1secret
       JWT_EXPIRES: 300000
-      PORT: 5000
+      PORT: 3000
+      RABBITMQ_ENDPOINT: 'rabbitmq'
+      RABBITMQ_USERNAME: 'root'
+      RABBITMQ_PASSWORD: 'FluentSearchRabbitMQ'
+      ML_ENDPOINT: http://insight:8080
     build:
       context: ./
       dockerfile: Dockerfile
       target: dev
     ports:
-      - '5000:5000'
+      - '3000:3000'
       - '9229:9229'
     volumes:
       - './src:/src'
@@ -69,7 +73,21 @@ services:
       TZ: Asia/Bangkok
     volumes:
       - './db/cfg:/bitnami'
-  elasticsearch:
-    image: 'bitnami/elasticsearch:latest'
+  rabbitmq:
+    image: bitnami/rabbitmq:3.8
+    volumes:
+      - ./mq/:/bitnami
     ports:
-      - '9200:9200'
+      - '15672:15672'
+    environment:
+      TZ: Asia/Bangkok
+      RABBITMQ_USERNAME: root
+      RABBITMQ_PASSWORD: FluentSearchRabbitMQ
+  insight:
+    container_name: insight
+    restart: on-failure
+    image: jolibrain/deepdetect_cpu
+    ports:
+      - '8080:8080'
+    volumes:
+      - './models:/opt/models/'

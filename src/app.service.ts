@@ -37,11 +37,11 @@ export class AppService implements OnModuleInit {
 
           payload.uri &&
             payload.fileId &&
-            (await this.insightService.predAllModel(
-              payload.fileId,
-              payload.owner,
-              internalUri,
-            ));
+            (await this.insightService.predAllModel({
+              fileId: payload.fileId,
+              owner: payload.owner,
+              uri: internalUri,
+            }));
           msg && channel.ack(msg);
           // send to ack queue
           channel.sendToQueue(

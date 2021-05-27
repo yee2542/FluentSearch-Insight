@@ -32,7 +32,7 @@ export class InsightService {
       ModelEnum.ilsvrc_googlenet,
     ];
     for (const m of allModel) {
-      await this.predict(fileId, owner, uri, m);
+      await this.predict(fileId, uri, owner, m);
     }
   }
 

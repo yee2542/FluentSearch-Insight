@@ -18,7 +18,7 @@ export class AppService implements OnModuleInit {
     const connectionString = `amqp://${config.username}:${config.password}@${config.endpoint}:5672`;
     const mq = await amqplib.connect(connectionString);
     const channel = await mq.createChannel();
-    channel.prefetch(2);
+    channel.prefetch(1);
 
     channel.consume(
       WORKER_INSIGHT_QUEUE,
@@ -40,6 +40,7 @@ export class AppService implements OnModuleInit {
             Buffer.from(JSON.stringify(payload)),
           );
         } catch (err) {
+          msg && channel.nack(msg);
           Logger.error(err);
         }
       },

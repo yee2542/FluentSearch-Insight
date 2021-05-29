@@ -48,7 +48,7 @@ export class InsightService {
       service: MODEL_ENDPOINT,
       parameters: {
         output: {
-          confidence_threshold: 0.2,
+          confidence_threshold: 0.25,
           bbox: true,
         },
         mllib: {

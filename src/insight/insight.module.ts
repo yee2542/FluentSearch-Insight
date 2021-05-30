@@ -1,6 +1,6 @@
 import { HttpModule, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { INSIGHT_SCHEMA_NAME, WORKER_INSIGHT_QUEUE } from 'fluentsearch-types';
+import { INSIGHT_SCHEMA_NAME } from 'fluentsearch-types';
 import insightSchema from 'fluentsearch-types/dist/entity/insight.entity';
 import { ConfigModule } from '../config/config.module';
 import { ConfigService } from '../config/config.service';
